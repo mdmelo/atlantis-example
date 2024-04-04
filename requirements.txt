@@ -60,6 +60,7 @@ tensorflow-estimator==2.15.0
 tensorflow-hub==0.16.1
 tensorflow-io-gcs-filesystem==0.36.0
 tensorflow-metadata==1.14.0
+tensorflow-model-optimization==0.8.0
 termcolor==2.4.0
 tf_keras==2.15.1
 toml==0.10.2

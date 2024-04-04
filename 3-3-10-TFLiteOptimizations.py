@@ -70,10 +70,8 @@ feature_extractor = hub.KerasLayer(MODULE_HANDLE,
 
 print("Building model with", MODULE_HANDLE)
 
-model = tf.keras.Sequential([
-    feature_extractor,
-    tf.keras.layers.Dense(num_classes, activation='softmax')
-])
+model = tf.keras.Sequential([feature_extractor,
+                             tf.keras.layers.Dense(num_classes, activation='softmax')])
 
 print(model.summary())
 
