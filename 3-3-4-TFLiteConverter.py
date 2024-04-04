@@ -41,7 +41,7 @@ export_dir = 'saved_model/1'
 # avoid python error missing attribute 'value', use model.export
 # see  https://github.com/keras-team/keras/issues/19108
 # prev: tf.saved_model.save(model, export_dir)
-model.export(export_dir, "tf_saved_model")
+model.export(export_dir)
 
 # Convert the model.
 converter = tf.lite.TFLiteConverter.from_saved_model(export_dir)

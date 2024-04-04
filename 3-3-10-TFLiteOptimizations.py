@@ -9,6 +9,7 @@
 # ### We start by importing TensorFlow and our Dataset
 # And splitting our dataset into batches.
 
+# using TF2.x with Keras 2.x see https://keras.io/getting_started/ and https://github.com/tensorflow/tensorflow/issues/63849
 import os
 os.environ["TF_USE_LEGACY_KERAS"] = "1"
 
@@ -18,38 +19,6 @@ import matplotlib.pylab as plt
 import tensorflow as tf
 import tensorflow_hub as hub
 import tensorflow_datasets as tfds
-
-
-# # --- test ---
-#
-#
-# module_selection = ("mobilenet_v2", 224, 1280)
-# handle_base, pixels, FV_SIZE = module_selection
-# MODULE_HANDLE ="https://tfhub.dev/google/tf2-preview/{}/feature_vector/4".format(handle_base)
-# IMAGE_SIZE = (pixels, pixels)
-#
-# # Using https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4 with input size (224, 224) and output dimension 1280
-# print("Using {} with input size {} and output dimension {}".format(MODULE_HANDLE, IMAGE_SIZE, FV_SIZE))
-#
-# feature_extractor = hub.KerasLayer(MODULE_HANDLE,
-#                                    input_shape=IMAGE_SIZE + (3,),
-#                                    output_shape=[FV_SIZE],
-#                                    trainable=False)
-#
-# print("Building model with", MODULE_HANDLE)
-#
-# model = tf.keras.Sequential([
-#     feature_extractor,
-#         tf.keras.layers.Dense(2, activation='softmax')
-# ])
-#
-# model.summary()
-#
-# model.compile(optimizer='adam',
-#               loss='sparse_categorical_crossentropy',
-#                   metrics=['accuracy'])
-#
-# # --- test ---
 
 
 # format images to have normalized pixels
@@ -103,14 +72,14 @@ print("Building model with", MODULE_HANDLE)
 
 model = tf.keras.Sequential([
     feature_extractor,
-        tf.keras.layers.Dense(num_classes, activation='softmax')
+    tf.keras.layers.Dense(num_classes, activation='softmax')
 ])
 
-model.summary()
+print(model.summary())
 
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
-                  metrics=['accuracy'])
+              metrics=['accuracy'])
 
 
 # ### We then train and save our model
@@ -118,7 +87,7 @@ model.compile(optimizer='adam',
 # We will explore transfer learning in detail and study how, why, and where it works later in this course!
 
 
-EPOCHS = 5
+EPOCHS = 1 # 5
 
 hist = model.fit(train_batches,
                  epochs=EPOCHS,
@@ -127,11 +96,12 @@ hist = model.fit(train_batches,
 
 
 CATS_VS_DOGS_SAVED_MODEL = "exp_saved_model"
+export_dir = 'saved_model/2'
 
 # avoid python error missing attribute 'value', use model.export
 # see  https://github.com/keras-team/keras/issues/19108
 # prev: tf.saved_model.save(model, CATS_VS_DOGS_SAVED_MODEL)
-model.export(CATS_VS_DOGS_SAVED_MODEL, "tf_saved_model")
+model.export(CATS_VS_DOGS_SAVED_MODEL)
 
 
 # ### Your task starts here:
