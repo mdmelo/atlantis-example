@@ -98,7 +98,7 @@ tflite_model = converter.convert()
 tflite_models_dir = pathlib.Path("/tmp/")
 tflite_model_file = tflite_models_dir/'model1.tflite'
 sz = tflite_model_file.write_bytes(tflite_model)
-print("model size is {}".format(sz))
+print("model size is {} bytes".format(sz))
 
 # This will report back the file size in bytes -- this model is too big for
 # our Arduino ut would work on a mobile phone
@@ -111,8 +111,7 @@ print("model size is {}".format(sz))
 # Again TFLite being amazing will only require you to write one line of code!
 
 
-# Load TFLite model and allocate tensors.
-TFLITE_MODEL_FILE = '/tmp/model1.tflite'
+# Load TFLite model and allocate tensors.it pushTFLITE_MODEL_FILE = '/tmp/model1.tflite'
 interpreter = tf.lite.Interpreter(model_path=TFLITE_MODEL_FILE)
 interpreter.allocate_tensors()
 
