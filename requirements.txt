@@ -63,6 +63,7 @@ tensorflow-metadata==1.14.0
 tensorflow-model-optimization==0.8.0
 termcolor==2.4.0
 tf_keras==2.15.1
+tflite==2.10.0
 toml==0.10.2
 tqdm==4.66.2
 typing_extensions==4.10.0

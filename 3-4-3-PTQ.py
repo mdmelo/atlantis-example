@@ -357,8 +357,8 @@ plt.show()
 
 
 
-TEXT_CLASSIFICATION_MODEL_FILE_NAME = "tflite-models/text_classification_v2.tflite"
-POSE_ESTIMATION_MODEL_FILE_NAME = "tflite-models/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite"
+TEXT_CLASSIFICATION_MODEL_FILE_NAME = "/files/pico/ML/atlantis-example/tflite-models/text_classification_v2.tflite"
+POSE_ESTIMATION_MODEL_FILE_NAME = "/files/pico/ML/atlantis-example/tflite-models/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite"
 
 with open(TEXT_CLASSIFICATION_MODEL_FILE_NAME, 'rb') as file:
     text_model_data = file.read()
