@@ -13,6 +13,7 @@ etils==1.8.0
 flatbuffers==24.3.25
 fonttools==4.50.0
 fsspec==2024.3.1
+future==1.0.0
 gast==0.5.4
 google-auth==2.29.0
 google-auth-oauthlib==1.2.0
@@ -58,6 +59,7 @@ tensorflow-cpu==2.15.0
 tensorflow-datasets==4.9.4
 tensorflow-estimator==2.15.0
 tensorflow-hub==0.16.1
+tensorflow-io==0.36.0
 tensorflow-io-gcs-filesystem==0.36.0
 tensorflow-metadata==1.14.0
 tensorflow-model-optimization==0.8.0
