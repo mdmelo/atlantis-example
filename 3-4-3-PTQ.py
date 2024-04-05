@@ -232,8 +232,10 @@ print("sizes {} vs {}".format(nb1, nb2))
 
 
 # To allow us to import the Python files we've just generated we need to update the path env variable
-sys.path.append("/files/pico/ML/tflite")
+sys.path.append("/files/pico/ML")
 import tflite
+
+sys.path.append("/files/pico/ML/tflite")
 import Model
 
 
