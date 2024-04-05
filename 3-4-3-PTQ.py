@@ -392,7 +392,7 @@ weights = aggregate_all_weights(model_dict_temp['buffers'])
 
 plt.figure(figsize=(8,8))
 plt.hist(weights, 256, log=True)
-
+plt.show()
 
 # Lets plot the distribution of the Post Net Model in log scale
 
@@ -401,6 +401,6 @@ weights = aggregate_all_weights(model_dict_temp['buffers'][:-1])
 
 plt.figure(figsize=(8,8))
 plt.hist(weights, 256, log=True)
-
+plt.show()
 
 # **Again we find that most model weights are closely packed around 0.**
