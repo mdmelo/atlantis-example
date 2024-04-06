@@ -12,7 +12,7 @@ os.environ["TF_USE_LEGACY_KERAS"] = "1"
 # In this Assignment, you will again train an autoencoder to detect anomalies on the
 # [ECG5000 dataset](http://www.timeseriesclassification.com/description.php?Dataset=ECG5000).
 #
-# This time 10% of our training set is anomalies the labels are not available at training time.
+# This time 10% of our training set is anomalies AND the labels are not available at training time.
 # This is to reflect a truely unsupervised scenario where we may not have access to labeled data or a
 # expert knowledge. Since the majority of our training data is still normal, we are still able to
 # train a high performing model as long as we don't overfit to our training data.
